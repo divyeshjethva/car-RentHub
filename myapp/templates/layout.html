@@ -6,19 +6,19 @@
     <title>
         {% block title %}CarRentHub - Rent Your Dream Car{% endblock %}
     </title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    
   </head>
   <body>
     <!-- Navbar -->
     <header>
       <div class="logo">CarRentHub</div>
       <nav>
-        <a href="#">Home</a>
-        <a href="#services">Services</a>
-        <a href="#cars">Cars</a>
-        <a href="#support">About</a>
-        <a href="#support">Contact</a>
-        <a href="#">Login</a>
+        <a href="{% url "index" %}">Home</a>
+        <a href="{% url "cars" %}">Cars</a>
+        <a href="{% url "blog" %}">Blog</a>
+        <a href="{% url "about" %}">About</a>
+        <a href="{% url "contact" %}">Contact</a>
+        <a href="{% url "logout" %}">Logout</a>
       </nav>
     </header>
 

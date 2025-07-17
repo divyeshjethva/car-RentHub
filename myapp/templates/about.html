@@ -1,0 +1,39 @@
+{% extends "layout.html" %} 
+{% load static %} 
+{% block title %}CarRentHub -About Us{% endblock %} 
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/about.css' %}" />
+
+<div class="about-container">
+  <h2>About CarRentHub</h2>
+  <p>
+    Welcome to <strong>CarRentHub</strong>, your trusted partner for reliable
+    and affordable car rentals across India. Whether you're planning a weekend
+    getaway, a business trip, or need a vehicle for your daily commute, we've
+    got you covered.
+  </p>
+
+  <p>
+    Founded in 2025, CarRentHub is built with the mission to simplify car
+    renting and make your travel experience smooth and hassle-free.
+  </p>
+
+  <p><strong>Why choose us?</strong></p>
+  <ul>
+    <li>Wide range of cars – from economy to luxury</li>
+    <li>Daily, weekly, and monthly rental options</li>
+    <li>24/7 customer support</li>
+    <li>Pickup & drop from multiple locations</li>
+    <li>Transparent pricing with no hidden charges</li>
+  </ul>
+
+  <p>
+    We are continuously expanding to more cities and improving our service based
+    on your feedback. Thank you for choosing CarRentHub — we look forward to
+    being a part of your journey.
+  </p>
+</div>
+
+{% endblock %}

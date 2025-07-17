@@ -4,7 +4,7 @@
 {% block title %}CarRentHub - Rent Your Dream Car{% endblock %}
 
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- Services -->
     <section id="services" class="services">
       <h2>Our Services</h2>
@@ -28,81 +28,29 @@
     <section id="cars" class="cars">
       <h2>Available Cars</h2>
       <div class="car-grid">
+        {% for avilable in avilables %}
         <div class="car-card">
           <img src="{% static 'images/1.jpg' %}" alt="Car 1" />
-          <h3>Hyundai Creta</h3>
-          <p>₹1500/day</p>
+          <h3>{{avilable.name}}</h3>
+          <p>₹{{avilable.price}}/day</p>
         </div>
+        {% endfor %}
 
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Car 2" />
-          <h3>Maruti Swift</h3>
-          <p>₹1200/day</p>
-        </div>
-
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Car 3" />
-          <h3>Toyota Innova</h3>
-          <p>₹1800/day</p>
-        </div>
-
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Car 4" />
-          <h3>Honda City</h3>
-          <p>₹1600/day</p>
-        </div>
-
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Car 5" />
-          <h3>Mahindra XUV700</h3>
-          <p>₹2000/day</p>
-        </div>
-
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Car 6" />
-          <h3>Kia Seltos</h3>
-          <p>₹1550/day</p>
-        </div>
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Car 6" />
-          <h3>Kia Seltos</h3>
-          <p>₹1550/day</p>
-        </div>
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Car 6" />
-          <h3>Kia Seltos</h3>
-          <p>₹1550/day</p>
-        </div>
       </div>
     </section>
 
     <section class="featured">
       <h2>🔥 Trending Offers</h2>
       <div class="car-grid">
+        {% for tranding in trandings %}
         <div class="car-card">
           <img src="{% static 'images/1.jpg' %}" alt="Trending Car 1" />
-          <h3>BMW X5</h3>
+          <h3>{{tranding.name}}</h3>
           <p>
-            ₹5000/day <br /><small style="color: green">20% OFF Today</small>
+            ₹{{tranding.price}}/day <br /><small style="color: green">{{trandings.offers}}</small>
           </p>
         </div>
-
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Trending Car 2" />
-          <h3>Jeep Compass</h3>
-          <p>
-            ₹3500/day <br /><small style="color: green">Limited Deal</small>
-          </p>
-        </div>
-
-        <div class="car-card">
-          <img src="{% static 'images/1.jpg' %}" alt="Trending Car 3" />
-          <h3>Mercedes A-Class</h3>
-          <p>
-            ₹6000/day <br /><small style="color: green">Weekend Special</small>
-          </p>
-        </div>
-      </div>
+        {% endfor %}
     </section>
 
     <section class="gallery">

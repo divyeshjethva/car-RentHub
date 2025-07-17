@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% load static %} {% block title %}CarRentHub -Cars
+{% endblock %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/cars.css' %}" />
+
+<div class="cars-container">
+
+  {% for i in cars %}
+  <div class="car-card">
+    <div class="car-image">
+      <img src="{% static 'images/1.jpg' %}" alt="Car Image" />
+    </div>
+    <div class="car-details">
+      <h3>{{i.name}}</h3>
+      <p><strong>Price:</strong> ₹{{i.price}}/day</p>
+      <p>
+        {{i.desc}}
+      </p>
+    </div>
+    <div class="car-rating">★★★★☆</div>
+  </div>
+  {% endfor %}
+
+</div>
+{% endblock %}

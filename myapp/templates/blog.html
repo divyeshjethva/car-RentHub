@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% load static %} {% block title %}CarRentHub -
+Blogs{% endblock %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+<div class="blog-container">
+  <div class="blog-post">
+    <img src="{% static 'images/1.jpg' %}" alt="Blog Image 1" />
+    <h3>Top 5 Road Trips to Take in India</h3>
+    <p>
+      Planning a road trip? Check out our handpicked list of the top 5 scenic
+      routes you should explore by car this year...
+    </p>
+    <a href="#">Read More</a>
+  </div>
+
+  <div class="blog-post">
+    <img src="{% static 'images/2.jpg' %}" alt="Blog Image 2" />
+    <h3>Benefits of Renting a Car Over Buying</h3>
+    <p>
+      Still deciding between buying and renting? Here are some compelling
+      reasons why renting may be the smarter move...
+    </p>
+    <a href="#">Read More</a>
+  </div>
+
+  <div class="blog-post">
+    <img src="{% static 'images/3.jpg' %}" alt="Blog Image 3" />
+    <h3>Tips for First-Time Car Renters</h3>
+    <p>
+      New to renting a car? Avoid these common mistakes and follow our beginner
+      tips for a smooth experience...
+    </p>
+    <a href="#">Read More</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -3,7 +3,9 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    avilables = AvailableCars.objects.all()
+    trandings = TrendingOffers.objects.all()
+    return render(request,'index.html',{'avilables':avilables,'trandings':trandings})
 
 def register(request):
     if request.method == "POST":
@@ -34,6 +36,7 @@ def login(request):
             user = User.objects.get(email=request.POST['email'])
             if user.email == request.POST['email']:
                 if user.password == request.POST['password']:
+                    request.session['email'] = user.email
                     return redirect('index')
                 else:
                     msg = "Password does not match"
@@ -47,3 +50,19 @@ def login(request):
     else:
         return render(request,'login.html')
     
+def logout(request):
+    del request.session['email']
+    return redirect(login)
+
+def contact(request):
+    return render(request,'contact.html')
+    
+def about(request):
+    return render(request,'about.html')
+    
+def cars(request):
+    cars = Cars.objects.all()
+    return render(request,'cars.html',{'cars':cars})
+    
+def blog(request):
+    return render(request,'blog.html')
