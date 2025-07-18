@@ -65,4 +65,5 @@ def cars(request):
     return render(request,'cars.html',{'cars':cars})
     
 def blog(request):
-    return render(request,'blog.html')
+    blog = Blog.objects.all()
+    return render(request,'blog.html',{'blog':blog})
