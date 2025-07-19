@@ -33,6 +33,7 @@
           <img src="{% static 'images/1.jpg' %}" alt="Car 1" />
           <h3>{{avilable.name}}</h3>
           <p>₹{{avilable.price}}/day</p>
+          <a href="{% url "details" avilable.id %}">read more</a>
         </div>
         {% endfor %}
 

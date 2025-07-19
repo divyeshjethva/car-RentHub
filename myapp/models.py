@@ -22,6 +22,7 @@ class Cars(models.Model):
 class AvailableCars(models.Model):
     name = models.CharField(max_length=40)
     price = models.IntegerField()
+    desc = models.TextField(default="")
     
     def __str__(self):
         return f"{self.name}"

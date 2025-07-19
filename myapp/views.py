@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import *
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 def index(request):
@@ -67,3 +68,8 @@ def cars(request):
 def blog(request):
     blog = Blog.objects.all()
     return render(request,'blog.html',{'blog':blog})
+
+def details(request,id):
+    # print(f"ID received: {id}") 
+    data = get_object_or_404(AvailableCars, pk=id)
+    return render(request,'details.html',{'data':data})
